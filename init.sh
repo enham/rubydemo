@@ -13,7 +13,9 @@ echo "##############################################################"
 echo
 
 #create new rails project
-rhc create-app $APP_NAME ruby-1.9 mysql-5.5
+#rhc create-app $APP_NAME ruby-1.9 mysql-5.5
+
+#build ror app
 scl enable ruby193 "rails new $APP_NAME"
 cd $APP_NAME
 cp ../install/Gemfile .
@@ -26,6 +28,8 @@ cp ../install/routes.rb config/
 rm -f public/index.html
 touch .openshift/markers/force_clean_build
 scl enable ruby193 "bundle install"
-git add .
-git commit -m "Initial commit"
-git push
+
+#push to openshift
+#git add .
+#git commit -m "Initial commit"
+#git push
