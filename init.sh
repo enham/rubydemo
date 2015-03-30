@@ -1,12 +1,12 @@
-APP_NAME=rhconvergence
+APP_NAME=uscgmtg
 
 clear
 
 echo
 echo "##############################################################"
 echo "##                                                          ##"   
-echo "## Setting up the Participant Sign-in Sheet  OpenShift Demo ##"
-echo "##      App Name=$APP_NAME                                  ##"   
+echo "## Setting up the Participant Sign-in Sheet OpenShift Demo  ##"
+echo "##      App Name=$APP_NAME                               ##"   
 echo "##                                                          ##"   
 echo "##  brought to you by Evong Nham                            ##"   
 echo "##                                                          ##"   
@@ -26,7 +26,7 @@ cp ../install/application.html.erb app/views/layouts/
 #cp ../install/routes.rb config/
 sed -i '2i\  root :to => "participants#index"' config/routes.rb
 rm -f public/index.html
-#touch .openshift/markers/force_clean_build
+touch .openshift/markers/force_clean_build
 scl enable ruby193 "bundle install"
 #git add .
 #git commit -m "Initial commit"
